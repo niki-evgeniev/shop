@@ -27,41 +27,6 @@ public class MailjetService {
     @Value("${mailjet.from-name}")
     private String fromName;
 
-//    public boolean sendEmail(EmailRequestDTO dto) {
-//        RestTemplate restTemplate = new RestTemplate();
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.setBasicAuth(apiKey, secretKey);
-//        headers.setContentType(MediaType.APPLICATION_JSON);
-//
-//        Map<String, Object> body = Map.of(
-//                "Messages", List.of(
-//                        Map.of(
-//                                "From", Map.of("Email", fromEmail, "Name", fromName),
-//                                "To", List.of(Map.of("Email", dto.getToEmail(), "Name", dto.getToName())),
-//                                "Subject", dto.getSubject(),
-//                                "TextPart", dto.getTextContent(),
-//                                "HTMLPart", dto.getHtmlContent()
-//                        )
-//                )
-//        );
-//
-//        HttpEntity<Object> request = new HttpEntity<>(body, headers);
-//
-//        try {
-//            ResponseEntity<String> response = restTemplate.postForEntity(
-//                    "https://api.mailjet.com/v3.1/send",
-//                    request,
-//                    String.class
-//            );
-//
-//            return response.getStatusCode().is2xxSuccessful();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return false;
-//        }
-//    }
-
     public boolean sendEmailRegisterUser(EmailRequestDTO dto) {
         RestTemplate restTemplate = new RestTemplate();
 
